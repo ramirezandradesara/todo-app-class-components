@@ -3,13 +3,17 @@ import React from "react";
 class CreateTodoButton extends React.Component {
   render() {
     return (
-      <button
-        onClick={this.props.onClick}
-        className={`btn btn-${this.props.className}`}
-      >
+      <form action="">
+        <input type="text" />
+        <button
+          onClick={this.handlerOnClick}
+          type="submit"
+        >
           Agregar tarea
-        {this.props.label}
-      </button>
+        </button>
+
+      </form>
+
     );
   }
 }

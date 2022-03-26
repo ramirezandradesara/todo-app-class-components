@@ -5,7 +5,9 @@ class TodoItem extends React.Component {
     return (
       <li>
        <p>
-           {this.props.text}
+           {this.props.text} 
+           <span> </span> 
+           {this.props.isCompleted}
        </p>
       </li>
     );

@@ -1,4 +1,3 @@
-
 import './App.css';
 import { TodoCounter } from './TodoCounter';
 import data from './data.json';
@@ -13,17 +12,26 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchedTodo: "",
+
     }
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(searchedTodo) {
+  handleChange(e) {
     this.setState({
-      searchedTodo: searchedTodo
+      searchedTodo: e.target.value
+    
     })
   }
 
+  handlerOnClick(e) {
+    e.preventDefault();
+    console.log("click");
+  }
+
+
   render() {
+ 
     return (
 
       <div className="App">
@@ -40,21 +48,18 @@ class App extends React.Component {
           handleChange={this.handleChange}
           searchedTodo={this.state.searchedTodo}>
 
-          {this.state.searchedTodo !== data.text
-            ? data.map(todo => (
-              <TodoItem key={todo.text} text={todo.text} />)
-            )
-            : data.filter(todo => todo.text.includes(this.state.searchedTodo))
+          {data.filter(todo => todo.text.toLowerCase().includes(this.state.searchedTodo))
               .map(todo => (
                 <TodoItem
                   key={todo.text}
                   text={todo.text}
+                  isCompleted = {todo.completed ? "✅" : ""}
                 />
           
               ))}
         </TodoList >
 
-        <CreateTodoButton />
+        <CreateTodoButton handlerOnClick={this.handlerOnClick} />
 
       </div>
     );

@@ -9,14 +9,12 @@ class TodoSearch extends React.Component {
 
     handleChange(e) {
         this.props.searchedTodo(e.target.value)
-        console.log(e.target.value);
     }
-    
+
     render() {
-        console.log(this.props.searchedTodo);
         return (
             <div>
-                <input onChange={(e) => this.props.handleChange(e)} type="text" placeholder="Buscar" />
+                <input onChange={this.props.handleChange} value={this.props.searchedTodo} type="text" placeholder="Buscar" />
 
             </div>
         )
