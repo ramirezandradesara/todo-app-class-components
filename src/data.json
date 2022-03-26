@@ -1,0 +1,26 @@
+[
+    {
+        "text": "Estudiar",
+        "completed": false
+      },
+      {
+        "text": "Limpiar cocina",
+        "completed": true
+      },
+      {
+        "text": "Sacar a pasea a Milo",
+        "completed": true
+      },
+      {
+        "text": "Comprar cactus",
+        "completed": true
+      },
+      {
+        "text": "Comprar cerveza",
+        "completed": true
+      },
+      {
+        "text": "Aprender a programar",
+        "completed": true
+      }
+]
